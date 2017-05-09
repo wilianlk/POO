@@ -25,4 +25,15 @@ Class Clase{
 		return $result;
 	}
 
+	public function insert(){
+		$db = new Conexion();
+		$sql = "INSERT INTO `contactos`(`nombre`) VALUES ('$this->nombre')";
+		$db->query($sql) ? header("location: Vista.php?res=insertado") : header("location: Vista.php?res=error");
+	}
+
+	public function update(){
+		$db = new Conexion();
+		$sql = "UPDATE `contactos` SET `$this->nombre` WHERE `id` `$this->id`";
+	}
+
 }

@@ -1,8 +1,14 @@
 <?php
 require_once('Clase.php');
-$a=new Clase();
-
+if (isset($_POST['Enviar'])) {
+	
+	if ($_POST['accion'] == 'insert') {
+		
+		$nom = $_POST['nom'];
+		
+		$agenda = new Clase($nom);
+		$agenda->insert();
+	}
+}
 
 ?>
-
-
